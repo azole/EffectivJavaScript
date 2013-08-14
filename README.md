@@ -1,1 +1,1 @@
-**Effective JavaScript Study Group
+#Effective JavaScript Study Group
