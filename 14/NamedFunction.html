@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Named function</title>
+        <style>			
+			pre {
+			   background: #333;
+			   color: white;
+			   padding: 2px;
+			   margin: 0 0 5px 0; /* Probably the same as paragraphs */
+			   width: 600px;
+			}
+        </style>
+    </head>
+    <body>
+        <h3>Named function</h3>
+        <div >
+        	<pre>
+        		<code>
+    function foo() {
+    	return bar();
+    }
+    var bar = (function() {	        	
+    	return function bar() {	        			
+    		return baz();
+    	};	        	
+    })();
+
+    function baz() {
+    	throw new Error('ERROR');
+    }
+
+    foo();	       
+        		</code>
+        	</pre>
+        	<pre>
+	baz namedfunction.html:73
+	bar namedfunction.html:63
+	foo namedfunction.html:58
+	(anonymous function)
+        	</pre>
+        </div>
+        <div>
+        	ref: <a href="http://kangax.github.io/nfe/#named-expr">http://kangax.github.io/nfe/#named-expr</a>
+        </div>
+        <script>
+	        function foo() {
+	        	return bar();
+	        }
+	        var bar = (function() {	        	
+        		return function bar() {	        			
+        			return baz();
+        		};	        	
+	        })();
+
+	        function baz() {
+	        	throw new Error('ERROR');
+	        }
+
+	        foo();	        
+        </script>
+    </body>
+</html>
