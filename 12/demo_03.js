@@ -1,12 +1,13 @@
 function test () {
-	var x="var",result+[];
+	var x="var",result=[];
 	result.push(x);
 	try{
+		x = "try";
 		throw "exception";
-	} catch (x){
+	} catch (x){	
 		x="catch";
 	}
 	result.push(x);
 	return result;
 }
-test();
+console.log(test());

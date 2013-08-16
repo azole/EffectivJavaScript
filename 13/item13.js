@@ -28,13 +28,14 @@
 // var f = wrapped[0];
 // console.log(f());
 
+// IIFE
 function wrapElements(a) {
   var result = [];
   n = a.length;
   for (i = 0; i < n; i++) {
     (function(j) {
-      result[i] = function() {return a[j];};
-    })(i);
+      result[i] = function() {return a[j];};     
+    })(i);	// pass by value 
   };
   return result;
 }
