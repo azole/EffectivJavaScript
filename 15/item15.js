@@ -44,7 +44,7 @@
 //   var result = [];
 //   if (x) {
 //     function f() {
-//       'use strict';// strict mode 只會影響他所在的 scope
+//       'use strict';// strict mode 只會影響他所在的 scope (不清楚 strict 影響的區塊是 函式區塊 還是  一般的區塊)
 //       return 'local';
 //     };
 //     result.push(f());
@@ -56,19 +56,19 @@
 // console.log(test(true));// [ 'local', 'local' ]
 
 //'use strict';
-function f() {return 'global';};
-function test(x) {
-  var g = f,
-  result = [];
-  if (x) {
-    g = function() {return 'local';};// assign
-    result.push(g());
-  };
-  result.push(g());
-  return result;
-};
-console.log(test(false));// [ 'global' ]
-console.log(test(true));// [ 'local', 'local' ]
+// function f() {return 'global';};
+// function test(x) {
+//   var g = f,
+//   result = [];
+//   if (x) {
+//     g = function() {return 'local';};// assign
+//     result.push(g());
+//   };
+//   result.push(g());
+//   return result;
+// };
+// console.log(test(false));// [ 'global' ]
+// console.log(test(true));// [ 'local', 'local' ]
 
 //結論:
 //總是將宣告放在最外層
