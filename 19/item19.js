@@ -25,7 +25,7 @@
 // console.log(upper2);// [ 'FRED', 'WILMA', 'PEBBLES' ]
 
 // #3
-// var aIndex = 'a'.charCodeAt(0),
+// var aIndex = 'abc'.charCodeAt(0),// 97
 //   alphabet = '',
 //   i = 0;
 // for (i = 0; i < 26; i++) {

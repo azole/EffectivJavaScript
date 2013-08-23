@@ -5,17 +5,17 @@
 // 如果沒有提供 thisObj 參數，那麼 Global 對象被用作 thisObj。 
 //call跟apply很像
 
-function add(a,b) 
-{ 
-alert(a+b); 
-} 
-function sub(a,b) 
-{ 
-alert(a-b); 
-} 
+// function hello(username){
+//   return "hello, " + this.username + username;
+// }
 
-console.log(add.call(sub,3,1));
-
+// var obj = {
+//   hello: function(){ return "Hi, " + this.username},
+//   username: "cyril"
+// };
+// // obj.hello = hello;
+// console.log(hello.call(obj, 'asdf'));
+// console.log(obj.hello());
 
 // obj.temporary = f; //如果obj.temporary已經存在了怎麼辦？
 // var result = obj.temporary(arg1, arg2, arg3);
@@ -34,26 +34,26 @@ console.log(add.call(sub,3,1));
 
 // // 參考條款45
 
-// dict.hasOwnProperty = 1;
-// console.log(dict.hasOwnProperty(foo););
+dict.hasOwnProperty = 1;
+console.log(dict.hasOwnProperty(foo););
 
-// var hasOwnProperty={}.hasOwnProperty;
-// dict.foo=1;
-// delete dict.hasOwnProperty;
-// hasOwnProperty.call(dict, "foo");
-// hasOwnProperty.call(dict, "hasOwnProperty");
+var hasOwnProperty={}.hasOwnProperty;
+dict.foo=1;
+delete dict.hasOwnProperty;
+hasOwnProperty.call(dict, "foo");
+hasOwnProperty.call(dict, "hasOwnProperty");
 
 
-// var table ={
-// 	entires: [],
-// 	addEntry: function(key, value){
-// 		this.entires.push({key: key, valur: valur});
-// 	},
-// 	forEach: function (f,thisArg) {
-// 		var entires=this.entires;
-// 		for(var i=0, n=entires.length;i<n;i++){
-// 			var entry = entry[i];
-// 			f.call(thisArg, entry.key, entry.value, i);
-// 		}
-// 	}
-// };
+var table ={
+ entires: [],
+ addEntry: function(key, value){
+   this.entires.push({key: key, valur: valur});
+ },
+ forEach: function (f,thisArg) {
+   var entires=this.entires;
+   for(var i=0, n=entires.length;i<n;i++){
+     var entry = entry[i];
+     f.call(thisArg, entry.key, entry.value, i);
+   }
+ }
+};

@@ -1,9 +1,9 @@
 // demo1: function call
-function hello(username){
-	return "hello, " + username;
-}
+// function hello(username){
+// 	return "hello, " + username;
+// }
 
-console.log(hello("eden"));
+// console.log(hello("eden"));
 
 // ===========================================================
 
@@ -14,6 +14,7 @@ console.log(hello("eden"));
 // 	},
 // 	username: "cyril"
 // };
+
 // console.log(obj.hello());
 
 // var obj2 = {
@@ -28,9 +29,9 @@ console.log(hello("eden"));
 // function hello(username){
 // 	return "hello, " + this.username;
 // }
-// //var username = 'eden';
-// //username = 'eden';
-// console.log(hello());
+// // //var username = 'eden';
+// // //username = 'eden';
+// // console.log(hello('azole'));
 
 // var obj = {
 // 	hello: hello,
@@ -52,12 +53,15 @@ console.log(hello("eden"));
 // myObject = {
 // 	value: 2,
 // 	double: function(){
+//     console.log('double:', this.value);
 // 		var helper = function(){
 // 			console.log('helper:', this.value);
 // 			this.value = this.value + this.value;
 // 			//因為helper是用函式的方式呼叫，所以這邊this是繫結到global object
 // 		};
 // 		helper();
+//    //解法1
+//    //helper.call(this);
 // 	}
 // };
 // myObject.double();
@@ -71,9 +75,8 @@ console.log(hello("eden"));
 // 	value: 2,
 // 	double: function(){
 // 		// 把正確的this儲存起來給函式使用
-// 		var that = this;
+// 		var that = this;  // 解法2
 // 		var helper = function(){
-// 			console.log('helper:', this.value);
 // 			that.value = that.value + that.value;
 // 		};
 // 		helper();
@@ -94,9 +97,9 @@ console.log(hello("eden"));
 // 	};
 // }
 
-// var eden = new User('eden', '大大');
-// console.log(eden.name + eden.title);
-// console.log(eden.toString());
+// var eden = new User('eden', '大大');  // 建構子呼叫
+// //console.log(eden.name + eden.title);
+// console.log(eden.toString()); // 方法呼叫
 
 // ===========================================================
 
@@ -108,7 +111,17 @@ console.log(hello("eden"));
 // NewObject.call(obj);	// 把NewObject這個函式裡的this指定成obj
 //
 // 所以demo3-1中的new等同於：
+// function User(name, title) {
+//   this.name = name;
+//   this.title = title;
+// }
+// User.prototype.toString = function(){
+//     return this.name + this.title;
+// };
+
 // var eden = {};
-// eden.constructor = User;
+// eden.__proto__ = User.prototype;
+// // eden.constructor = User;
 // User.call(eden, 'eden', '大大');
+// //        ^^^^^ 指定this
 // console.log(eden.toString());
