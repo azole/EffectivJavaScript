@@ -43,12 +43,3 @@
 //   }
 // };
 // console.log(callMethod(obj, "add", 17, 25));
-
-"use strict";
-function test(ary)
-{
-  ary[0] = 'azole';
-}
-var a = ['cyril', 'eden'];
-test(a);
-console.log(a);
