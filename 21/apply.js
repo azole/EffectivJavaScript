@@ -1,5 +1,5 @@
-// call() 和 apply() 的差別主要在於 call() 只接受一個參數，即 call(thisArg) ；而
-//  apply() 接受兩個參數，即 apply(thisArg, argArray) 。透過 call() 和 apply() 
+// call() 和 apply() 的差別主要在於 call() 只接受多個參數，即 call(thisArg, param1, param2,...) ；
+//  而apply() 接受兩個參數，即 apply(thisArg, argArray) 。透過 call() 和 apply() 
 //  調用函數的主要目的，在於改變函數內部的 this 名稱所指涉的對象。對一般函數而言，當 
 //  programmer 在函數內部使用 this 名稱時，指涉對象是 global object 。global object 
 //  是運行環境中最頂層的個體，在瀏覽器環境中，global object 就是 window 此一個體。
@@ -28,14 +28,16 @@
 // console.log(sum(1, 3));
 // console.log(sum(1, 3, 4));
 
-// function sum2(ary)	//  利用陣列來增加參數的彈性
-// {
-// 	var sum = 0;
-// 	for(var i=0, len=ary.length; i<len; i++)
-// 		sum += ary[i];  // sum = sum + ary[i];
-// 	return sum;
-// }
-// console.log(sum2([1, 3, 4, 5, 6, 7]));
+function sum2(ary)	//  利用陣列來增加參數的彈性
+{
+	var sum = 0;
+	for(var i=0, len=ary.length; i<len; i++)
+		sum += ary[i];  // sum = sum + ary[i];
+	return sum;
+}
+console.log(sum2([1, 3, 4, 5, 6, 7]));
+console.log(sum2.call(null, [1, 3]));
+console.log(sum2.apply(null, [[1, 3]]));
 
 // demo3
 function sum3()	// 利用內建的arguments
@@ -46,9 +48,9 @@ function sum3()	// 利用內建的arguments
 	return sum;
 }
 
-console.log(sum3(1, 3));
-console.log(sum3(1, 3, 4, 5, 6, 7));
+// console.log(sum3(1, 3));
+// console.log(sum3(1, 3, 4, 5, 6, 7));
 
 console.log(sum3.call(null, 1, 3));
-
 console.log(sum3.apply(null, [1, 3]));
+
