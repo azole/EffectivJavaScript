@@ -1,0 +1,1 @@
+##Item 23 永不使用 arguments 物件
