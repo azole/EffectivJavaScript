@@ -1,0 +1,1 @@
+##Item 22 使用arguments來建立可變參數的函式
