@@ -1,3 +1,11 @@
+// call() 和 apply() 的差別主要在於 call() 只接受一個參數，即 call(thisArg) ；而
+//  apply() 接受兩個參數，即 apply(thisArg, argArray) 。透過 call() 和 apply() 
+//  調用函數的主要目的，在於改變函數內部的 this 名稱所指涉的對象。對一般函數而言，當 
+//  programmer 在函數內部使用 this 名稱時，指涉對象是 global object 。global object 
+//  是運行環境中最頂層的個體，在瀏覽器環境中，global object 就是 window 此一個體。
+//  但是 call() 和 apply() 可以改變 this 名稱所指涉的對象。
+// http://blog.roodo.com/rocksaying/archives/2532303.html
+
 // // demo1
 // function hello(username){
 //   return "hello, " + this.username + username;
