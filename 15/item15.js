@@ -29,7 +29,7 @@
 // function test(x) {
 //   var result = [];
 //   if (x) {
-//     function f() {return 'local';};// error
+//     function f() {return 'local';};// error(使用嚴謹模式，不允許一般的block內新增具名函式)
 //     result.push(f());
 //   };
 //   result.push(f());
