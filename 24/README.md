@@ -1,0 +1,1 @@
+##Item 24 使用一個變數來儲存對 arguments 的參考(Reference)
