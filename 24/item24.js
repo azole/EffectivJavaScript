@@ -17,17 +17,17 @@
 //   };
 // };
 // var it = values(1, 4, 1, 4, 2, 1, 3, 5, 6);
-// it.next();
-// it.next();
-// it.next();
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
 // 預期
-//it.next(); // 1
-//it.next(); // 4
-//it.next(); // 1
+// it.next(); // 1
+// it.next(); // 4
+// it.next(); // 1
 // 實際
-//it.next(); // undefined
-//it.next(); // undefined
-//it.next(); // undefined
+// it.next(); // undefined
+// it.next(); // undefined
+// it.next(); // undefined
 
 // #2
 function values() {
