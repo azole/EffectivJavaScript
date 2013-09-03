@@ -1,0 +1,1 @@
+##Item 26 使用bind建立Curry函式
