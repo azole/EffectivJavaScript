@@ -7,7 +7,7 @@ var buffer={
 		return this.entries.join("");
 	}
 };
-方法零
+// 方法零
 var source=["867","-","5309"];
 console.log(source.forEach(buffer.add));
 

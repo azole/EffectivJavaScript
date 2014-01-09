@@ -10,4 +10,6 @@ function test () {
 	result.push(x);
 	return result;
 }
+x=5;
 console.log(test());
+console.log(x);
